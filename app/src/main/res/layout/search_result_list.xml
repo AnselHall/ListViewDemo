@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#E6E6E9" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_recommend_detail"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="240dp"-->
+            <!--android:scaleType="centerCrop" />-->
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/iv_recommend_detail"
+            android:layout_width="match_parent"
+            android:layout_height="240dp">
+
+        </android.support.v4.view.ViewPager>
+
+        <ImageView
+            android:id="@+id/iv_can_panorama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:src="@mipmap/house_can_panorama"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="16dp"
+            android:src="@mipmap/recommend_collect_normal" />
+
+        <RelativeLayout
+            android:id="@+id/rl_price"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignBottom="@+id/iv_recommend_detail"
+            android:layout_alignLeft="@+id/iv_recommend_detail"
+            android:layout_marginBottom="15dp"
+            android:background="#09091A"
+            android:paddingLeft="11dp"
+            android:paddingRight="8dp">
+
+            <TextView
+                android:id="@+id/tv_house_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="500"
+                android:textColor="#ffffff"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/tv_price_per_night"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_house_price"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_house_price"
+                android:paddingBottom="3dp"
+                android:text="起/晚"
+                android:textColor="#C0C0C8" />
+
+            <ImageView
+                android:id="@+id/iv_instant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_price_per_night"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@id/tv_price_per_night"
+                android:paddingBottom="3dp"
+                android:src="@mipmap/immediately_book" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_distance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_recommend_detail"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/rl_price"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingBottom="20dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/iv_recommend_detail"
+            android:background="@drawable/search_result_item_bottom_bg" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_house_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="13dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#09091A"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="13dp"
+            android:paddingTop="2dp">
+
+            <TextView
+                android:id="@+id/tv_suggest_people_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="#6B6B76"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_evaluate_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_suggest_people_number"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:gravity="center_vertical"
+                    android:text="·"
+                    android:textColor="#6B6B76"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_evaluate_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="#6B6B76"
+                    android:textSize="12sp" />
+
+                <RatingBar
+                    android:id="@+id/rb_evaluate_number"
+                    style="@style/ListRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="0.5dp"
+                    android:isIndicator="true"
+                    android:rating="4" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="15dp"
+        android:background="#E6E6E9" />
+
+
+</LinearLayout>
